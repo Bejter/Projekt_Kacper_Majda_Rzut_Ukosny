@@ -56,14 +56,15 @@
         <Label Grid.Column="0" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Grawitacja:</Label>
         <TextBox Grid.Column="1" Grid.Row="6" x:Name="gravityInput"></TextBox>
         <Label Grid.Column="2" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">m/s^2</Label>
-        
+
         <!-- ___________ Startowanie symulacji ______________ -->
         <Button Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="7" Margin="5" Click="Button_Click">Uruchom symulację</Button>
-        
+
         <!-- ___________ Wyniki: ___________________ -->
-        <Label Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalAlignment="Center">Wyniki: </Label>
+        <Label Grid.Column="0" Grid.Row="8"  VerticalContentAlignment="Center" HorizontalAlignment="Center">Wyniki:</Label>
+
         <!-- ___________ Czas lotu: ________________ -->
-        <Label Grid.Column="0" Grid.Row="9" VerticalContentAlignment="Center" HorizontalAlignment="Center"> Czas Lotu: </Label>
+        <Label Grid.Column="0" Grid.Row="9" VerticalContentAlignment="Center" HorizontalAlignment="Center">Czas Lotu:</Label>
         <Label Grid.Column="1" Grid.Row="9" VerticalContentAlignment="Center" HorizontalAlignment="Center" x:Name="flightTimeLbl">...</Label>
 
         <!-- ___________ Zasięg: ________________ -->
@@ -74,6 +75,11 @@
         <Label Grid.Column="0" Grid.Row="11" VerticalContentAlignment="Center" HorizontalAlignment="Center">Maks. wysokość:</Label>
         <Label Grid.Column="1" Grid.Row="11" VerticalContentAlignment="Center" HorizontalAlignment="Center" x:Name="maksHeightLbl">...</Label>
         <!-- ______________Wykres_____________ -->
-        <lvc:CartesianChart x:Name="trajectoryChart" Grid.Column="3" Grid.Row="0" Grid.RowSpan="12" Series="{Binding Series}" />
+        <lvc:CartesianChart x:Name="trajectoryChart" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="3" Grid.Row="0" Grid.RowSpan="9" Series="{Binding Series}" LegendPosition="Bottom" Height="300" Width="300"/>
+        <RadioButton Grid.Column="1" Content="Euler" HorizontalAlignment="Left" Margin="0,33,0,0" Grid.Row="7" VerticalAlignment="Top" Grid.RowSpan="2" Click="RadioButton_Click"/>
+        <RadioButton Grid.Column="1" Content="Analityczna" HorizontalAlignment="Left" Margin="0,15,0,0" Grid.Row="8" VerticalAlignment="Top" Click="RadioButton_Click_1"/>
+
+        <RadioButton FontSize="15" Grid.Column="3" Content="Wykres błędu" HorizontalAlignment="Center" Margin="0,33,0,0" Grid.Row="10" VerticalAlignment="Top" Grid.RowSpan="2" Click="RadioButton_Click_2"/>
+        <RadioButton FontSize="15" Grid.Column="3" Content="Wykres metod" HorizontalAlignment="Center" Margin="0,15,0,0" Grid.Row="10" VerticalAlignment="Top" Click="RadioButton_Click_3"/>
     </Grid>
 </Window>
